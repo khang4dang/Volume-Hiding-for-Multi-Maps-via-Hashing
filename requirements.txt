@@ -1,0 +1,8 @@
+hurry==1.1
+hurry.filesize==0.9
+mysql_connector_repackaged==0.3.1
+numpy==1.22.3
+pandas==1.4.2
+prettytable==3.2.0
+pycryptodome==3.14.1
+python-dotenv==0.20.0
