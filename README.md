@@ -1,2 +1,2 @@
-# Volume-Hiding-for-Multi-Maps-via-Hashing
+# Volume-Hiding for Multi-Maps via Hashing
  
