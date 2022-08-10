@@ -32,7 +32,7 @@ iii.	Follow the prompts on screen to select a dataset and run queries for it
 -	Note: program must be rerun per dataset selection
 
 ## I. Overview
-Volume-hiding structured encryption of multi-maps help solve severe consequences in volume leakage which is a prominent threat to the security of cryptographic cloud-based databases. In this project, our group will partially stimulate volume-hiding implementations of the research paper, in which the performance of all private queries to an untrusted server is maintained by sharing the same (as the largest) response size; in other words, the number of responses (volume) for any query are hidden from the adversarial server. Also, the responses are originated from the actual ciphertexts containing many dummy results to make a query look uniform with others before being outsourced to the adversarial server. In this report, we first introduce the overview of the algorithm including two main parts: the setup and the query. Then, we will present the development and the execution of the project.
+Volume-hiding structured encryption of multi-maps help solve severe consequences in volume leakage which is a prominent threat to the security of cryptographic cloud-based databases. In this project, our group will partially stimulate volume-hiding implementations of the research paper[^1], in which the performance of all private queries to an untrusted server is maintained by sharing the same (as the largest) response size; in other words, the number of responses (volume) for any query are hidden from the adversarial server. Also, the responses are originated from the actual ciphertexts containing many dummy results to make a query look uniform with others before being outsourced to the adversarial server. In this report, we first introduce the overview of the algorithm including two main parts: the setup and the query. Then, we will present the development and the execution of the project.
 
 ## II. Algorithm
 
@@ -132,3 +132,10 @@ Request & Response:
 In our implementation, we use the BitHash hashing function. Also, a random function setups a list of random 64-bit values to be used by BitHash and seeds the generator to produce repeatable results. This is useful in the event that client code needs a new hash function like Cuckoo Hashing.
 
 To finish the EMM setup, the client outsources the ciphertext of each key-value tuple and its location. To query for a key, the client issues a query to find slots related to it. The server then carries out discovery for each slot from the tables and returns the ciphertext stored. Due to the slot arrangement in the setup, the ciphertexts surely contain all the real values associated with the queried key, and there will be one and only one ciphertext (either associated with the queried key or another key) for each of the l slots of any key, thus maintaining the same response volume (i.e., l) for any key.
+
+---
+<p align="center"><b>
+Khang Dang & Vrushali Koli
+</b></p>
+
+[^1]: Sarvar Patel, Giuseppe Persiano, Kevin Yeo, and Moti Yung. 2019. Mitigating Leakage in Secure Cloud-Hosted Data Structures: Volume-Hiding for Multi-Maps via Hashing. In Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (CCS '19). Association for Computing Machinery, New York, NY, USA, 79–93. DOI: https://doi.org/10.1145/3319535.3354213
